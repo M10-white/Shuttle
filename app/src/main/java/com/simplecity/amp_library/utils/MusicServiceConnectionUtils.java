@@ -15,7 +15,7 @@ public class MusicServiceConnectionUtils {
 
     private static final String TAG = "MusicServiceConnectionU";
 
-    public static LocalBinder serviceBinder = null;
+    static LocalBinder serviceBinder = null;
 
     private static final WeakHashMap<Context, ServiceBinder> connectionMap = new WeakHashMap<>();
 
@@ -79,7 +79,7 @@ public class MusicServiceConnectionUtils {
 
     public static final class ServiceToken {
 
-        public Context context;
+        Context context;
 
         ServiceToken(final Context context) {
             this.context = context;

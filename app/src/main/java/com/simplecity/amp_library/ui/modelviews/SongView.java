@@ -204,7 +204,7 @@ public class SongView extends BaseSelectableViewModel<SongView.ViewHolder> imple
     }
 
     @Override
-    public void bindView(ViewHolder holder, int position, List payloads) {
+    public void bindView(ViewHolder holder, int position, List<?> payloads) {
         super.bindView(holder, position, payloads);
 
         //A partial bind. Due to the areContentsEqual implementation, the only reason this is called

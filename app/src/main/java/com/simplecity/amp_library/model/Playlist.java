@@ -86,6 +86,8 @@ public class Playlist implements Serializable {
             case Playlist.Type.USER_CREATED:
                 playlistManager.clearPlaylist(id);
                 break;
+            default:
+                break;
         }
     }
 

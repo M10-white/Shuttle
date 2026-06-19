@@ -87,7 +87,7 @@ public class MusicService extends MediaBrowserServiceCompat {
 
     private MusicNotificationHelper notificationHelper;
 
-    private static NotificationStateHandler notificationStateHandler;
+    private static volatile NotificationStateHandler notificationStateHandler;
 
     private AlarmManager alarmManager;
 

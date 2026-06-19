@@ -33,6 +33,8 @@ public class Song implements
 
     private static final String TAG = "Song";
 
+    private static final String COLUMN_ALBUM_ARTIST = "album_artist";
+
     public long id;
     public String name;
     public String artistName;
@@ -85,7 +87,7 @@ public class Song implements
                 MediaStore.Audio.Media.DATE_ADDED,
                 MediaStore.Audio.Media.IS_PODCAST,
                 MediaStore.Audio.Media.BOOKMARK,
-                "album_artist"
+                COLUMN_ALBUM_ARTIST
         };
     }
 
@@ -129,8 +131,8 @@ public class Song implements
         path = cursor.getString(cursor.getColumnIndexOrThrow(MediaStore.Audio.Media.DATA));
 
         albumArtistName = artistName;
-        if (cursor.getColumnIndex("album_artist") != -1) {
-            String albumArtist = cursor.getString(cursor.getColumnIndex("album_artist"));
+        if (cursor.getColumnIndex(COLUMN_ALBUM_ARTIST) != -1) {
+            String albumArtist = cursor.getString(cursor.getColumnIndex(COLUMN_ALBUM_ARTIST));
             if (albumArtist != null) {
                 albumArtistName = albumArtist;
             }

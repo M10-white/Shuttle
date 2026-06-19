@@ -80,10 +80,8 @@ public class CustomMediaScanner implements MediaScannerConnection.MediaScannerCo
         connection.scanFile(path, null);
         nextPath++;
 
-        if (scanCompletionListener != null) {
-            if (handler != null) {
-                handler.post(() -> scanCompletionListener.onPathScanned(path));
-            }
+        if (scanCompletionListener != null && handler != null) {
+            handler.post(() -> scanCompletionListener.onPathScanned(path));
         }
 
         Log.d(TAG, "Scanning file: " + path);

@@ -45,9 +45,7 @@ import java.util.List;
 
 public final class ShuttleUtils {
 
-    //Arguments supplied to various bundles
-
-    private final static String TAG = "ShuttleUtils";
+    private static final String TAG = "ShuttleUtils";
 
     @NonNull
     public static Intent getShuttleStoreIntent(@NonNull String packageName) {
@@ -93,13 +91,7 @@ public final class ShuttleUtils {
 
         SharedPreferences prefs = PreferenceManager.getDefaultSharedPreferences(context);
 
-        //Check if we are restricted to download over wifi only
-        boolean wifiOnly = prefs.getBoolean("pref_download_wifi_only", true);
-
-        //If we don't care whether wifi is allowed or not, set wifiOnly to false
-        if (!careAboutWifiOnly) {
-            wifiOnly = false;
-        }
+        boolean wifiOnly = careAboutWifiOnly && prefs.getBoolean("pref_download_wifi_only", true);
 
         final ConnectivityManager cm = (ConnectivityManager) context
                 .getSystemService(Context.CONNECTIVITY_SERVICE);
@@ -117,21 +109,15 @@ public final class ShuttleUtils {
 
     public static boolean isUpgraded(ShuttleApplication application, SettingsManager settingsManager) {
 
-        if (application.getIsUpgraded()) {
-            return true;
-        }
-
-        if (settingsManager.getIsLegacyUpgraded()) {
+        if (application.getIsUpgraded() || settingsManager.getIsLegacyUpgraded()) {
             return true;
         }
 
         try {
             return application.getPackageName().equals(Config.PACKAGE_NAME_PRO);
-        } catch (Exception ignored) {
+        } catch (IllegalStateException ignored) {
+            return true;
         }
-
-        //If something goes wrong, assume the user has the pro version
-        return true;
     }
 
     /**

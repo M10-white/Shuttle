@@ -254,12 +254,12 @@ public class FileBrowser {
         return title;
     }
 
-    private Comparator sizeComparator() {
-        return (Comparator<BaseFileObject>) (lhs, rhs) -> (int) (rhs.size - lhs.size);
+    private Comparator<BaseFileObject> sizeComparator() {
+        return (lhs, rhs) -> (int) (rhs.size - lhs.size);
     }
 
-    private Comparator filenameComparator() {
-        return (Comparator<BaseFileObject>) (lhs, rhs) -> lhs.name.compareToIgnoreCase(rhs.name);
+    private Comparator<BaseFileObject> filenameComparator() {
+        return (lhs, rhs) -> lhs.name.compareToIgnoreCase(rhs.name);
     }
 
     //    private Comparator durationComparator() {

@@ -20,18 +20,18 @@ import org.jaudiotagger.tag.TagException;
  */
 public class TagInfo implements Serializable {
 
-    public String artistName;
-    public String albumArtistName;
-    public String albumName;
-    public String trackName;
-    public int trackNumber;
-    public int trackTotal;
-    public int discNumber;
-    public int discTotal;
-    public String bitrate;
-    public String format;
-    public int sampleRate;
-    public String genre;
+    String artistName;
+    String albumArtistName;
+    String albumName;
+    String trackName;
+    int trackNumber;
+    int trackTotal;
+    int discNumber;
+    int discTotal;
+    String bitrate;
+    String format;
+    int sampleRate;
+    String genre;
 
     public TagInfo(String filePath) {
         if (filePath != null) {
@@ -51,8 +51,7 @@ public class TagInfo implements Serializable {
                     this.format = getFormat(audioFile);
                     this.sampleRate = getSampleRate(audioFile);
                     this.genre = getTag(audioFile, FieldKey.GENRE);
-                } catch (CannotReadException | IOException | TagException | ReadOnlyFileException | InvalidAudioFrameException e) {
-                    e.printStackTrace();
+                } catch (CannotReadException | IOException | TagException | ReadOnlyFileException | InvalidAudioFrameException ignored) {
                 }
             }
         }

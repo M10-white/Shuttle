@@ -838,4 +838,9 @@
 
     <string name="notification_text_shuttle_running">Shuttle service running…</string>
 
+    <!-- Time placeholder for player controls -->
+    <string name="time_placeholder">--:--</string>
+    <!-- Equalizer band label for -15db -->
+    <string name="eq_minus_15db">-15db</string>
+
 </resources>

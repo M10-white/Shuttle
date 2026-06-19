@@ -102,32 +102,28 @@ public class ArtworkUtils {
 
         Uri contentUri = ContentUris.withAppendedId(MediaStore.Audio.Albums.EXTERNAL_CONTENT_URI, albumId);
 
-        FileInputStream fileInputStream = null;
-
         Cursor cursor = context
                 .getContentResolver()
                 .query(contentUri, new String[] { MediaStore.Audio.Albums.ALBUM_ART }, null, null, null);
 
-        if (cursor != null) {
-            try {
-                if (cursor.moveToFirst()) {
-                    File file = new File(cursor.getString(cursor.getColumnIndex(MediaStore.Audio.Albums.ALBUM_ART)));
-                    if (file.exists()) {
-                        try {
-                            fileInputStream = new FileInputStream(file);
-                        } catch (FileNotFoundException ignored) {
-
-                        }
-                    }
-                }
-            } catch (NullPointerException ignored) {
-
-            } finally {
-                cursor.close();
-            }
+        if (cursor == null) {
+            return null;
         }
 
-        return fileInputStream;
+        try {
+            if (!cursor.moveToFirst()) {
+                return null;
+            }
+            File file = new File(cursor.getString(cursor.getColumnIndex(MediaStore.Audio.Albums.ALBUM_ART)));
+            if (!file.exists()) {
+                return null;
+            }
+            return new FileInputStream(file);
+        } catch (NullPointerException | FileNotFoundException ignored) {
+            return null;
+        } finally {
+            cursor.close();
+        }
     }
 
     /**
@@ -152,26 +148,28 @@ public class ArtworkUtils {
     @WorkerThread
     public static InputStream getTagArtwork(@Nullable String filePath) {
 
-        InputStream inputStream = null;
-
-        if (filePath != null) {
-            try {
-                AudioFile audioFIle = AudioFileIO.read(new File(filePath));
-                if (audioFIle != null) {
-                    Tag tag = audioFIle.getTag();
-                    if (tag != null) {
-                        org.jaudiotagger.tag.datatype.Artwork artwork = tag.getFirstArtwork();
-                        if (artwork != null) {
-                            inputStream = new ByteArrayInputStream(artwork.getBinaryData());
-                        }
-                    }
-                }
-            } catch (CannotReadException | IOException | TagException | ReadOnlyFileException | InvalidAudioFrameException ignored) {
-
-            }
+        if (filePath == null) {
+            return null;
         }
 
-        return inputStream;
+        try {
+            AudioFile audioFIle = AudioFileIO.read(new File(filePath));
+            if (audioFIle == null) {
+                return null;
+            }
+            Tag tag = audioFIle.getTag();
+            if (tag == null) {
+                return null;
+            }
+            org.jaudiotagger.tag.datatype.Artwork artwork = tag.getFirstArtwork();
+            if (artwork != null) {
+                return new ByteArrayInputStream(artwork.getBinaryData());
+            }
+        } catch (CannotReadException | IOException | TagException | ReadOnlyFileException | InvalidAudioFrameException ignored) {
+
+        }
+
+        return null;
     }
 
     /**

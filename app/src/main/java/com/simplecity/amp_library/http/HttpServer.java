@@ -128,7 +128,7 @@ public class HttpServer {
                         audioInputStream = new FileInputStream(file);
                         audioInputStream.skip(start);
                         Response response = newFixedLengthResponse(Response.Status.PARTIAL_CONTENT, getMimeType(audioFileToServe), audioInputStream, contentLength);
-                        response.addHeader("Content-Length", contentLength + "");
+                        response.addHeader("Content-Length", String.valueOf(contentLength));
                         response.addHeader("Content-Range", "bytes " + start + "-" + end + "/" + fileLength);
                         response.addHeader("Content-Type", getMimeType(audioFileToServe));
                         return response;
@@ -137,7 +137,6 @@ public class HttpServer {
                     }
                 } catch (IOException e) {
                     Log.e(TAG, "Error serving audio: " + e.getMessage());
-                    e.printStackTrace();
                 }
             } else if (uri.contains("image")) {
                 if (imageBytesToServe == null) {
@@ -171,7 +170,7 @@ public class HttpServer {
         }
     }
 
-    private final Map<String, String> MIME_TYPES = new HashMap<String, String>() {{
+    private final Map<String, String> MIME_TYPES = new HashMap<>() {{
         put("css", "text/css");
         put("htm", "text/html");
         put("html", "text/html");

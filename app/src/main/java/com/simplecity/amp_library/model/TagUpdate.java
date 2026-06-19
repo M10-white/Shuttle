@@ -216,7 +216,7 @@ public class TagUpdate {
         if (titleHasChanged) {
             try {
                 tag.setField(FieldKey.TITLE, title);
-            } catch (Exception ignored) {
+            } catch (UnsupportedOperationException | IllegalArgumentException ignored) {
             }
         }
         if (albumHasChanged) {
