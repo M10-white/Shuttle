@@ -8,6 +8,7 @@ import android.net.Uri;
 import android.os.Bundle;
 import android.os.RemoteException;
 import android.support.annotation.NonNull;
+import android.util.Log;
 import android.support.annotation.Nullable;
 import android.support.annotation.StringRes;
 import android.support.v4.app.DialogFragment;
@@ -336,7 +337,7 @@ public class DeleteDialog extends DialogFragment implements SafManager.SafDialog
         try {
             getContext().getContentResolver().applyBatch(PlayCountTable.AUTHORITY, operations);
         } catch (RemoteException | OperationApplicationException e) {
-            e.printStackTrace();
+            Log.e(TAG, "Failed to apply batch delete", e);
         }
 
         CustomMediaScanner.scanFiles(getContext(), Stream.of(deletedSongs)

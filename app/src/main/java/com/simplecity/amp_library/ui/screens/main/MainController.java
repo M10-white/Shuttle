@@ -284,9 +284,6 @@ public class MainController extends BaseNavigationController implements BackPres
         ((DrawerProvider) getActivity()).getDrawerLayout().setDrawerLockMode(DrawerLayout.LOCK_MODE_UNLOCKED);
     }
 
-    // Todo:  Remove once cause of shared element crash is understood.
-    // This is a copy of the superclass method of the same name/signature, with some additional logging
-    // to help ascertain the cause of a crash.
     @Override
     public void pushViewController(@NonNull Fragment fragment, @Nullable String tag, @Nullable List<Pair<View, String>> sharedElements) {
         FragmentTransaction fragmentTransaction = getChildFragmentManager()

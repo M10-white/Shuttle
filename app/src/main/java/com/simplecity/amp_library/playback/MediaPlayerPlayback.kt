@@ -43,7 +43,7 @@ internal class MediaPlayerPlayback(context: Context) : LocalPlayback(context), M
                 try {
                     return currentMediaPlayer?.duration?.toLong() ?: 0
                 } catch (e: IllegalStateException) {
-                    Log.e(TAG, "Error in getDuration() of MediaPlayerPlayback: " + e.localizedMessage)
+                    Log.e(TAG, "Error in getDuration() of MediaPlayerPlayback: ${e.localizedMessage}")
                 }
 
             }

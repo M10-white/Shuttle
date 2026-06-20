@@ -60,7 +60,7 @@ public class VoiceSearchActivity extends BaseActivity {
     @Override
     public void onServiceConnected(ComponentName name, IBinder service) {
         super.onServiceConnected(name, service);
-        if (intent != null && intent.getAction() != null && intent.getAction().equals("android.media.action.MEDIA_PLAY_FROM_SEARCH")) {
+        if (intent != null && intent.getAction() != null && "android.media.action.MEDIA_PLAY_FROM_SEARCH".equals(intent.getAction())) {
             searchAndPlaySongs();
         }
     }
@@ -138,7 +138,6 @@ public class VoiceSearchActivity extends BaseActivity {
                 .subscribe(songs -> {
                     if (songs != null) {
                         mediaManager.playAll(songs, position, true, () -> {
-                            // Todo: Show playback error toast
                             return Unit.INSTANCE;
                         });
                         startActivity(new Intent(this, MainActivity.class));

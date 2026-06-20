@@ -81,7 +81,7 @@ class FileInfoDialog : DialogFragment() {
         val pathKey = pathView.findViewById<TextView>(R.id.key)
         pathKey.setText(R.string.song_info_path)
         val pathValue = pathView.findViewById<TextView>(R.id.value)
-        pathValue.text = fileObject!!.path + "/" + fileObject!!.name + "." + fileObject!!.extension
+        pathValue.text = "${fileObject!!.path}/${fileObject!!.name}.${fileObject!!.extension}"
 
         val discNumberView = view.findViewById<View>(R.id.disc_number)
         val discNumberKey = discNumberView.findViewById<TextView>(R.id.key)

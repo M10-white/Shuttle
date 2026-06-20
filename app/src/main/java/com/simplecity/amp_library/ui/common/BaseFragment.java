@@ -45,10 +45,7 @@ public abstract class BaseFragment extends BaseController {
         super.onCreate(savedInstanceState);
     }
 
-    @Override
-    public void onViewCreated(@NonNull View view, @Nullable Bundle savedInstanceState) {
-        super.onViewCreated(view, savedInstanceState);
-    }
+    // S1185: Removed trivial override that only called super.onViewCreated()
 
     @Override
     public void onResume() {

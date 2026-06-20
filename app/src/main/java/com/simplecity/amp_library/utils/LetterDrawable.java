@@ -37,7 +37,7 @@ public class LetterDrawable extends Drawable {
         }
         canvas.drawColor(pickColor(mDisplayName));
         if (mKeyName.length() > 0) {
-            mPaint.setTextSize(canvas.getHeight() * 3 / 5);
+            mPaint.setTextSize(canvas.getHeight() * 3.0f / 5);
             mPaint.getTextBounds(mFirstChar, 0, 1, getBounds());
             canvas.drawText(mFirstChar, 0, 1, canvas.getWidth() / 2, canvas.getHeight() / 2
                     + (getBounds().bottom - getBounds().top) / 2, mPaint);
@@ -46,12 +46,12 @@ public class LetterDrawable extends Drawable {
 
     @Override
     public void setAlpha(int alpha) {
-
+        // No-op: alpha is not supported for this drawable
     }
 
     @Override
     public void setColorFilter(ColorFilter cf) {
-
+        // No-op: color filter is not supported for this drawable
     }
 
     @Override

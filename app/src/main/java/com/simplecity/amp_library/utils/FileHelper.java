@@ -26,7 +26,7 @@ import java.util.NoSuchElementException;
 
 public class FileHelper {
 
-    private final static String TAG = "FileHelper";
+    private static final String TAG = "FileHelper";
 
     /**
      * The root directory
@@ -338,7 +338,7 @@ public class FileHelper {
     /**
      * An array of accepted/supported audio extensions.
      */
-    public static String[] sExtensions = new String[] {
+    private static final String[] sExtensions = new String[] {
             "mp3", "3gp", "mp4", "m4a",
             "aac", "ts", "flac", "mid",
             "xmf", "mxmf", "midi", "rtttl",

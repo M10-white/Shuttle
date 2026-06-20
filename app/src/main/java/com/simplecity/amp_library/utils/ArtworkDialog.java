@@ -4,6 +4,7 @@ import android.annotation.SuppressLint;
 import android.content.ContentValues;
 import android.content.Context;
 import android.support.annotation.Nullable;
+import android.util.Log;
 import android.support.v7.widget.LinearLayoutManager;
 import android.support.v7.widget.RecyclerView;
 import android.view.LayoutInflater;
@@ -176,7 +177,7 @@ public class ArtworkDialog {
                                     return RxImageConverters.uriToFile(context, uri, file);
                                 }
                             } catch (IOException e) {
-                                e.printStackTrace();
+                                Log.e(TAG, "Failed to create artwork file", e);
                             }
 
                             return null;

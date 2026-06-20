@@ -90,7 +90,7 @@
                             android:layout_height="wrap_content"
                             android:layout_alignParentRight="true"
                             android:layout_centerVertical="true"
-                            android:text="+15db"
+                            android:text="@string/eq_plus_15db"
                             android:textSize="14sp"/>
                     </RelativeLayout>
 
@@ -128,7 +128,7 @@
                             android:layout_width="wrap_content"
                             android:layout_height="wrap_content"
                             android:layout_centerVertical="true"
-                            android:text="-15db"
+                            android:text="@string/eq_minus_15db"
                             android:textSize="14sp"/>
 
                         <TextView
@@ -137,7 +137,7 @@
                             android:layout_height="wrap_content"
                             android:layout_alignParentRight="true"
                             android:layout_centerVertical="true"
-                            android:text="+15db"
+                            android:text="@string/eq_plus_15db"
                             android:textSize="14sp"/>
                     </RelativeLayout>
 
@@ -175,7 +175,7 @@
                             android:layout_width="wrap_content"
                             android:layout_height="wrap_content"
                             android:layout_centerVertical="true"
-                            android:text="-15db"
+                            android:text="@string/eq_minus_15db"
                             android:textSize="14sp"
 
                             />
@@ -186,7 +186,7 @@
                             android:layout_height="wrap_content"
                             android:layout_alignParentRight="true"
                             android:layout_centerVertical="true"
-                            android:text="+15db"
+                            android:text="@string/eq_plus_15db"
                             android:textSize="14sp"/>
                     </RelativeLayout>
 
@@ -224,7 +224,7 @@
                             android:layout_width="wrap_content"
                             android:layout_height="wrap_content"
                             android:layout_centerVertical="true"
-                            android:text="-15db"
+                            android:text="@string/eq_minus_15db"
                             android:textSize="14sp"/>
 
                         <TextView
@@ -233,7 +233,7 @@
                             android:layout_height="wrap_content"
                             android:layout_alignParentRight="true"
                             android:layout_centerVertical="true"
-                            android:text="+15db"
+                            android:text="@string/eq_plus_15db"
                             android:textSize="14sp"/>
                     </RelativeLayout>
 
@@ -271,7 +271,7 @@
                             android:layout_width="wrap_content"
                             android:layout_height="wrap_content"
                             android:layout_centerVertical="true"
-                            android:text="-15db"
+                            android:text="@string/eq_minus_15db"
                             android:textSize="14sp"/>
 
                         <TextView
@@ -280,7 +280,7 @@
                             android:layout_height="wrap_content"
                             android:layout_alignParentRight="true"
                             android:layout_centerVertical="true"
-                            android:text="+15db"
+                            android:text="@string/eq_plus_15db"
                             android:textSize="14sp"/>
                     </RelativeLayout>
 
@@ -319,7 +319,7 @@
                             android:layout_width="wrap_content"
                             android:layout_height="wrap_content"
                             android:layout_centerVertical="true"
-                            android:text="-15db"
+                            android:text="@string/eq_minus_15db"
                             android:textSize="14sp"
                             android:visibility="gone"/>
 
@@ -329,7 +329,7 @@
                             android:layout_height="wrap_content"
                             android:layout_alignParentRight="true"
                             android:layout_centerVertical="true"
-                            android:text="+15db"
+                            android:text="@string/eq_plus_15db"
                             android:textSize="14sp"
                             android:visibility="gone"/>
                     </RelativeLayout>

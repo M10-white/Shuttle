@@ -46,7 +46,7 @@ open class SongsRepository @Inject constructor(
     private val allSongsRelay = BehaviorRelay.create<List<Song>>()
 
     override fun getAllSongs(): Observable<List<Song>> {
-        if (allSongsSubscription == null || allSongsSubscription?.isDisposed == true) {
+        if (allSongsSubscription == null || allSongsSubscription?.isDisposed != false) {
             allSongsSubscription = SqlBriteUtils.createObservableList<Song>(context, { Song(it) }, Song.getQuery())
                 .subscribe(
                     allSongsRelay,

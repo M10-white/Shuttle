@@ -340,7 +340,7 @@ public class PlaybackManager implements Playback.Callbacks {
                 .observeOn(AndroidSchedulers.mainThread())
                 .subscribe(songs -> {
                     if (!songs.isEmpty() && queueManager.getCurrentSong() != null) {
-                        load(queueManager.getCurrentSong(), playWhenReady, (long) 0, null);
+                        load(queueManager.getCurrentSong(), playWhenReady, 0L, null);
                     }
                 }, error -> LogUtils.logException(TAG, "Error opening file", error)));
     }

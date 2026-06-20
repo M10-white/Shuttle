@@ -170,7 +170,7 @@ public class HttpServer {
         }
     }
 
-    private final Map<String, String> MIME_TYPES = new HashMap<>() {{
+    private static final Map<String, String> MIME_TYPES = new HashMap<>() {{
         put("css", "text/css");
         put("htm", "text/html");
         put("html", "text/html");
