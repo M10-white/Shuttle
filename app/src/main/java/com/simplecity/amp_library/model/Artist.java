@@ -4,6 +4,8 @@ import java.io.Serializable;
 
 public class Artist implements Serializable {
 
+    private static final long serialVersionUID = 1L;
+
     public long id;
     public String name;
     public int numAlbums;

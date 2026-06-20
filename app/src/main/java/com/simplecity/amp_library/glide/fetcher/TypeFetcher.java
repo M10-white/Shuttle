@@ -77,10 +77,10 @@ public class TypeFetcher implements DataFetcher<InputStream> {
 
     @Override
     public String getId() {
-        String id = artworkProvider.getArtworkKey() + "_" + type;
+        StringBuilder id = new StringBuilder(artworkProvider.getArtworkKey() + "_" + type);
         if (file != null) {
-            id += "_" + file.hashCode();
+            id.append("_").append(file.hashCode());
         }
-        return id;
+        return id.toString();
     }
 }

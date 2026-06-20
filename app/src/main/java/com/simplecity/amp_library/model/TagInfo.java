@@ -20,6 +20,8 @@ import org.jaudiotagger.tag.TagException;
  */
 public class TagInfo implements Serializable {
 
+    private static final long serialVersionUID = 1L;
+
     String artistName;
     String albumArtistName;
     String albumName;

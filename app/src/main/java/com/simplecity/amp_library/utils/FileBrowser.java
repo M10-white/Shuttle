@@ -266,8 +266,8 @@ public class FileBrowser {
     //        return (Comparator<FileObject>) (lhs, rhs) -> (int) (rhs.duration - lhs.duration);
     //    }
 
-    private Comparator trackNumberComparator() {
-        return (Comparator<FileObject>) (lhs, rhs) -> lhs.tagInfo.trackNumber - rhs.tagInfo.trackNumber;
+    private Comparator<FileObject> trackNumberComparator() {
+        return (lhs, rhs) -> lhs.tagInfo.trackNumber - rhs.tagInfo.trackNumber;
     }
 
     private Comparator folderCountComparator() {
@@ -305,7 +305,7 @@ public class FileBrowser {
         };
     }
 
-    <T extends Comparable<T>> int nullCompare(T a, T b) {
+    private <T extends Comparable<T>> int nullCompare(T a, T b) {
         return a == null ? (b == null ? 0 : Integer.MIN_VALUE) : (b == null ? Integer.MAX_VALUE : a.compareTo(b));
     }
 }

@@ -544,7 +544,7 @@ public class ColorHelper {
             final float m = l - 0.5f * c;
             final float x = c * (1f - Math.abs((h / 60f % 2f) - 1f));
 
-            final int hueSegment = (int) h / 60;
+            final int hueSegment = (int) (h / 60);
 
             int r = 0;
             int g = 0;

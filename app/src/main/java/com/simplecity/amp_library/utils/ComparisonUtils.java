@@ -6,7 +6,7 @@ import java.util.Locale;
 
 public class ComparisonUtils {
 
-    private static Collator collator = Collator.getInstance(Locale.getDefault());
+    private static final Collator collator = Collator.getInstance(Locale.getDefault());
 
     private ComparisonUtils() {
 

@@ -7,18 +7,13 @@ import retrofit2.converter.gson.GsonConverterFactory;
 
 public class HttpClient {
 
-    private static final String TAG = "HttpClient";
-
     private static final String URL_LAST_FM = "https://ws.audioscrobbler.com/2.0/";
-    private static final String URL_ITUNES = "https://itunes.apple.com/search/";
 
     private static HttpClient sInstance;
 
     public OkHttpClient okHttpClient;
 
     public LastFmService lastFmService;
-
-    private static final String TAG_ARTWORK = "artwork";
 
     public static synchronized HttpClient getInstance() {
         if (sInstance == null) {

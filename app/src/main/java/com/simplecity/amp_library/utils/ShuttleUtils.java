@@ -181,7 +181,7 @@ public final class ShuttleUtils {
                 context.getContentResolver().insert(PlayCountTable.URI, values);
             }
         } catch (IllegalArgumentException e) {
-            Log.e(TAG, "Failed to increment play count: " + e.toString());
+            Log.e(TAG, "Failed to increment play count: " + e);
         }
     }
 

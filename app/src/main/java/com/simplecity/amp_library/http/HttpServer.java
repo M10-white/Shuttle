@@ -92,12 +92,7 @@ public class HttpServer {
                     File file = new File(audioFileToServe);
 
                     Map<String, String> headers = session.getHeaders();
-                    String range = null;
-                    for (String key : headers.keySet()) {
-                        if ("range".equals(key)) {
-                            range = headers.get(key);
-                        }
-                    }
+                    String range = headers.get("range");
 
                     if (range == null) {
                         range = "bytes=0-";

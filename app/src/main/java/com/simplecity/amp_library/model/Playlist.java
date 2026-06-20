@@ -14,6 +14,8 @@ import kotlin.jvm.functions.Function1;
 
 public class Playlist implements Serializable {
 
+    private static final long serialVersionUID = 1L;
+
     private static final String TAG = "Playlist";
 
     public @interface Type {

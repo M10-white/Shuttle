@@ -5,6 +5,7 @@ import android.app.Activity;
 import android.app.ActivityManager;
 import android.content.Context;
 import android.content.pm.PackageManager;
+import android.util.Log;
 import android.content.res.TypedArray;
 import android.graphics.Bitmap;
 import android.graphics.Canvas;
@@ -312,7 +313,7 @@ public final class Util {
         return bitmap;
       }
     } catch (PackageManager.NameNotFoundException e) {
-      e.printStackTrace();
+      Log.e("Util", "Package not found", e);
     }
     return null;
   }

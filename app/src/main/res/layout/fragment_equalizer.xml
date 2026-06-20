@@ -29,8 +29,8 @@
         android:layout_height="match_parent"
         android:orientation="vertical"
         android:paddingBottom="@dimen/equalizer_activity_top_padding"
-        android:paddingLeft="@dimen/equalizer_activity_edge_padding"
-        android:paddingRight="@dimen/equalizer_activity_edge_padding"
+        android:paddingStart="@dimen/equalizer_activity_edge_padding"
+        android:paddingEnd="@dimen/equalizer_activity_edge_padding"
         android:paddingTop="@dimen/equalizer_activity_top_padding">
 
         <TextView
@@ -63,8 +63,8 @@
                     <RelativeLayout
                         android:layout_width="match_parent"
                         android:layout_height="wrap_content"
-                        android:layout_alignParentLeft="true"
-                        android:layout_alignParentRight="true"
+                        android:layout_alignParentStart="true"
+                        android:layout_alignParentEnd="true"
                         android:layout_below="@+id/EqBand0TopTextView">
 
                         <com.simplecity.amp_library.ui.views.SizableSeekBar
@@ -72,8 +72,8 @@
                             style="@style/SeekBar"
                             android:layout_width="match_parent"
                             android:layout_height="wrap_content"
-                            android:layout_toLeftOf="@+id/EqBand0RightTextView"
-                            android:layout_toRightOf="@+id/EqBand0LeftTextView"
+                            android:layout_toStartOf="@+id/EqBand0RightTextView"
+                            android:layout_toEndOf="@+id/EqBand0LeftTextView"
                             android:indeterminate="false"/>
 
                         <TextView
@@ -88,7 +88,7 @@
                             android:id="@+id/EqBand0RightTextView"
                             android:layout_width="wrap_content"
                             android:layout_height="wrap_content"
-                            android:layout_alignParentRight="true"
+                            android:layout_alignParentEnd="true"
                             android:layout_centerVertical="true"
                             android:text="@string/eq_plus_15db"
                             android:textSize="14sp"/>
@@ -111,8 +111,8 @@
                     <RelativeLayout
                         android:layout_width="match_parent"
                         android:layout_height="wrap_content"
-                        android:layout_alignParentLeft="true"
-                        android:layout_alignParentRight="true"
+                        android:layout_alignParentStart="true"
+                        android:layout_alignParentEnd="true"
                         android:layout_below="@+id/EqBand1TopTextView">
 
                         <com.simplecity.amp_library.ui.views.SizableSeekBar
@@ -120,8 +120,8 @@
                             style="@style/SeekBar"
                             android:layout_width="match_parent"
                             android:layout_height="wrap_content"
-                            android:layout_toLeftOf="@+id/EqBand1RightTextView"
-                            android:layout_toRightOf="@+id/EqBand1LeftTextView"/>
+                            android:layout_toStartOf="@+id/EqBand1RightTextView"
+                            android:layout_toEndOf="@+id/EqBand1LeftTextView"/>
 
                         <TextView
                             android:id="@+id/EqBand1LeftTextView"
@@ -135,7 +135,7 @@
                             android:id="@+id/EqBand1RightTextView"
                             android:layout_width="wrap_content"
                             android:layout_height="wrap_content"
-                            android:layout_alignParentRight="true"
+                            android:layout_alignParentEnd="true"
                             android:layout_centerVertical="true"
                             android:text="@string/eq_plus_15db"
                             android:textSize="14sp"/>
@@ -158,8 +158,8 @@
                     <RelativeLayout
                         android:layout_width="match_parent"
                         android:layout_height="wrap_content"
-                        android:layout_alignParentLeft="true"
-                        android:layout_alignParentRight="true"
+                        android:layout_alignParentStart="true"
+                        android:layout_alignParentEnd="true"
                         android:layout_below="@+id/EqBand2TopTextView">
 
                         <com.simplecity.amp_library.ui.views.SizableSeekBar
@@ -167,8 +167,8 @@
                             style="@style/SeekBar"
                             android:layout_width="match_parent"
                             android:layout_height="wrap_content"
-                            android:layout_toLeftOf="@+id/EqBand2RightTextView"
-                            android:layout_toRightOf="@+id/EqBand2LeftTextView"/>
+                            android:layout_toStartOf="@+id/EqBand2RightTextView"
+                            android:layout_toEndOf="@+id/EqBand2LeftTextView"/>
 
                         <TextView
                             android:id="@+id/EqBand2LeftTextView"
@@ -184,7 +184,7 @@
                             android:id="@+id/EqBand2RightTextView"
                             android:layout_width="wrap_content"
                             android:layout_height="wrap_content"
-                            android:layout_alignParentRight="true"
+                            android:layout_alignParentEnd="true"
                             android:layout_centerVertical="true"
                             android:text="@string/eq_plus_15db"
                             android:textSize="14sp"/>
@@ -207,8 +207,8 @@
                     <RelativeLayout
                         android:layout_width="match_parent"
                         android:layout_height="wrap_content"
-                        android:layout_alignParentLeft="true"
-                        android:layout_alignParentRight="true"
+                        android:layout_alignParentStart="true"
+                        android:layout_alignParentEnd="true"
                         android:layout_below="@+id/EqBand3TopTextView">
 
                         <com.simplecity.amp_library.ui.views.SizableSeekBar
@@ -216,8 +216,8 @@
                             style="@style/SeekBar"
                             android:layout_width="match_parent"
                             android:layout_height="wrap_content"
-                            android:layout_toLeftOf="@+id/EqBand3RightTextView"
-                            android:layout_toRightOf="@+id/EqBand3LeftTextView"/>
+                            android:layout_toStartOf="@+id/EqBand3RightTextView"
+                            android:layout_toEndOf="@+id/EqBand3LeftTextView"/>
 
                         <TextView
                             android:id="@+id/EqBand3LeftTextView"
@@ -231,7 +231,7 @@
                             android:id="@+id/EqBand3RightTextView"
                             android:layout_width="wrap_content"
                             android:layout_height="wrap_content"
-                            android:layout_alignParentRight="true"
+                            android:layout_alignParentEnd="true"
                             android:layout_centerVertical="true"
                             android:text="@string/eq_plus_15db"
                             android:textSize="14sp"/>
@@ -254,8 +254,8 @@
                     <RelativeLayout
                         android:layout_width="match_parent"
                         android:layout_height="wrap_content"
-                        android:layout_alignParentLeft="true"
-                        android:layout_alignParentRight="true"
+                        android:layout_alignParentStart="true"
+                        android:layout_alignParentEnd="true"
                         android:layout_below="@+id/EqBand4TopTextView">
 
                         <com.simplecity.amp_library.ui.views.SizableSeekBar
@@ -263,8 +263,8 @@
                             style="@style/SeekBar"
                             android:layout_width="match_parent"
                             android:layout_height="wrap_content"
-                            android:layout_toLeftOf="@+id/EqBand4RightTextView"
-                            android:layout_toRightOf="@+id/EqBand4LeftTextView"/>
+                            android:layout_toStartOf="@+id/EqBand4RightTextView"
+                            android:layout_toEndOf="@+id/EqBand4LeftTextView"/>
 
                         <TextView
                             android:id="@+id/EqBand4LeftTextView"
@@ -278,7 +278,7 @@
                             android:id="@+id/EqBand4RightTextView"
                             android:layout_width="wrap_content"
                             android:layout_height="wrap_content"
-                            android:layout_alignParentRight="true"
+                            android:layout_alignParentEnd="true"
                             android:layout_centerVertical="true"
                             android:text="@string/eq_plus_15db"
                             android:textSize="14sp"/>
@@ -301,8 +301,8 @@
                     <RelativeLayout
                         android:layout_width="match_parent"
                         android:layout_height="wrap_content"
-                        android:layout_alignParentLeft="true"
-                        android:layout_alignParentRight="true"
+                        android:layout_alignParentStart="true"
+                        android:layout_alignParentEnd="true"
                         android:layout_below="@+id/EqBand5TopTextView">
 
                         <com.simplecity.amp_library.ui.views.SizableSeekBar
@@ -310,8 +310,8 @@
                             style="@style/SeekBar"
                             android:layout_width="match_parent"
                             android:layout_height="wrap_content"
-                            android:layout_toLeftOf="@+id/EqBand5RightTextView"
-                            android:layout_toRightOf="@+id/EqBand5LeftTextView"
+                            android:layout_toStartOf="@+id/EqBand5RightTextView"
+                            android:layout_toEndOf="@+id/EqBand5LeftTextView"
                             android:visibility="gone"/>
 
                         <TextView
@@ -327,7 +327,7 @@
                             android:id="@+id/EqBand5RightTextView"
                             android:layout_width="wrap_content"
                             android:layout_height="wrap_content"
-                            android:layout_alignParentRight="true"
+                            android:layout_alignParentEnd="true"
                             android:layout_centerVertical="true"
                             android:text="@string/eq_plus_15db"
                             android:textSize="14sp"

@@ -31,6 +31,8 @@ public class Song implements
         ArtworkProvider,
         Sortable {
 
+    private static final long serialVersionUID = 1L;
+
     private static final String TAG = "Song";
 
     private static final String COLUMN_ALBUM_ARTIST = "album_artist";
@@ -398,7 +400,6 @@ public class Song implements
                 '}';
     }
 
-    @Nullable
     @Override
     public int compareTo(@NonNull Song song) {
         return ComparisonUtils.compare(getSortKey(), song.getSortKey());

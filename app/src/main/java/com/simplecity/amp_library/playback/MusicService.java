@@ -79,7 +79,7 @@ public class MusicService extends MediaBrowserServiceCompat {
 
     private final IBinder binder = new LocalBinder(this);
 
-    private BroadcastReceiver unmountReceiver = null;
+    private BroadcastReceiver unmountReceiver;
 
     private int serviceStartId = -1;
 

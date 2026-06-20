@@ -58,10 +58,10 @@ abstract class LocalPlayback(context: Context) : Playback {
             if (AudioManager.ACTION_AUDIO_BECOMING_NOISY == intent.action) {
                 Log.d(TAG, "Headphones disconnected.")
                 if (isPlaying) {
-                    val intent = Intent(context, MusicService::class.java)
-                    intent.action = ServiceCommand.COMMAND
-                    intent.putExtra(MediaButtonCommand.CMD_NAME, ServiceCommand.PAUSE)
-                    context.startService(intent)
+                    val pauseIntent = Intent(context, MusicService::class.java)
+                    pauseIntent.action = ServiceCommand.COMMAND
+                    pauseIntent.putExtra(MediaButtonCommand.CMD_NAME, ServiceCommand.PAUSE)
+                    context.startService(pauseIntent)
                 }
             }
         }

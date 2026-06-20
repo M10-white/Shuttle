@@ -43,7 +43,7 @@ public class QCircleActivity extends BaseActivity {
     // [END] QuickCover Settings DB
 
     // [START] QuickCircle info.
-    static boolean quickCircleEnabled = false;
+    private static boolean quickCircleEnabled;
     int circleWidth = 0;
     int circleHeight = 0;
     int circleXpos = 0;
@@ -52,18 +52,18 @@ public class QCircleActivity extends BaseActivity {
     // [END] QuickCircle info.
 
     // -------------------------------------------------------------------------------
-    private final boolean DEBUG = true;
-    private final String TAG = "QCircleActivity";
+    private static final boolean DEBUG = true;
+    private static final String TAG = "QCircleActivity";
     int mQuickCoverState = 0;
     Context mContext;
-    private Window win = null;
-    private ContentResolver contentResolver = null;
+    private Window win;
+    private ContentResolver contentResolver;
 
     //For buttons
-    ImageButton backBtn = null;
-    ImageButton skipBtn = null;
-    ImageButton prevBtn = null;
-    ImageButton pauseBtn = null;
+    ImageButton backBtn;
+    ImageButton skipBtn;
+    ImageButton prevBtn;
+    ImageButton pauseBtn;
 
     TextView textOne;
     TextView textTwo;
@@ -327,10 +327,10 @@ public class QCircleActivity extends BaseActivity {
 
             final String action = intent.getAction();
             if (action != null) {
-                if (action.equals(InternalIntents.META_CHANGED)) {
+                if (InternalIntents.META_CHANGED.equals(action)) {
                     updateTrackInfo();
                     setPauseButtonImage();
-                } else if (action.equals(InternalIntents.PLAY_STATE_CHANGED)) {
+                } else if (InternalIntents.PLAY_STATE_CHANGED.equals(action)) {
                     setPauseButtonImage();
                 }
             }

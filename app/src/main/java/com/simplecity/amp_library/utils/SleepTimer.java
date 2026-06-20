@@ -145,9 +145,7 @@ public final class SleepTimer {
                         materialDialog.dismiss();
                     }
                 })
-                .onNegative((materialDialog, dialogAction) -> {
-                    materialDialog.dismiss();
-                })
+                .onNegative((materialDialog, dialogAction) -> materialDialog.dismiss())
                 .show();
 
         new Handler().post(() -> {

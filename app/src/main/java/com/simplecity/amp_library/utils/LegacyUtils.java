@@ -4,6 +4,7 @@ import android.os.Environment;
 import android.support.annotation.NonNull;
 import com.simplecity.amp_library.ShuttleApplication;
 import io.reactivex.Completable;
+import com.simplecity.amp_library.utils.LogUtils;
 import java.io.File;
 
 public class LegacyUtils {
@@ -22,10 +23,14 @@ public class LegacyUtils {
                     File[] files = file.listFiles();
                     if (files != null) {
                         for (File child : files) {
-                            child.delete();
+                            if (!child.delete()) {
+                                LogUtils.logException("LegacyUtils", "Failed to delete file: " + child.getAbsolutePath(), null);
+                            }
                         }
                     }
-                    file.delete();
+                    if (!file.delete()) {
+                        LogUtils.logException("LegacyUtils", "Failed to delete directory: " + file.getAbsolutePath(), null);
+                    }
                 }
             }
 

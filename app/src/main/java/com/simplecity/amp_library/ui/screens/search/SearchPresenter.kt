@@ -25,7 +25,7 @@ import io.reactivex.android.schedulers.AndroidSchedulers
 import io.reactivex.disposables.Disposable
 import io.reactivex.functions.Function3
 import io.reactivex.schedulers.Schedulers
-import java.util.*
+import java.util.Collections
 import javax.inject.Inject
 
 class SearchPresenter @Inject

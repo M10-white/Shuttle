@@ -425,16 +425,16 @@ public class EqualizerFragment extends BaseFragment implements
             equalizerUpdateDisplay();
         }
         if (bassBoostSupported) {
-            baseBoostSeekbar.setProgress(Integer.valueOf(prefs.getString("audiofx.bass.strength", "0")));
+            baseBoostSeekbar.setProgress(Integer.parseInt(prefs.getString("audiofx.bass.strength", "0")));
         }
         if (virtualizerSupported) {
-            virtualizerSeekbar.setProgress(Integer.valueOf(prefs.getString("audiofx.virtualizer.strength", "0")));
+            virtualizerSeekbar.setProgress(Integer.parseInt(prefs.getString("audiofx.virtualizer.strength", "0")));
         }
 
         // Initialize the Equalizer elements.
         if (equalizerSupported) {
             String preset = String.valueOf(numberEqualizerBands);
-            eqPreset = Integer.valueOf(prefs.getString("audiofx.eq.preset", preset));
+            eqPreset = Integer.parseInt(prefs.getString("audiofx.eq.preset", preset));
             if (spinnerAdapter != null && spinnerAdapter.getCount() > eqPreset) {
                 spinner.setSelection(eqPreset);
             }
@@ -524,7 +524,7 @@ public class EqualizerFragment extends BaseFragment implements
             String[] split = savedCenterFreqs.split(";");
             int[] freqs = new int[split.length];
             for (int i = 0; i < split.length; i++) {
-                freqs[i] = Integer.valueOf(split[i]);
+                freqs[i] = Integer.parseInt(split[i]);
             }
             return freqs;
         }
@@ -535,7 +535,7 @@ public class EqualizerFragment extends BaseFragment implements
         String[] split = savedCenterFreqs.split(";");
         int[] freqs = new int[split.length];
         for (int i = 0; i < split.length; i++) {
-            freqs[i] = Integer.valueOf(split[i]);
+            freqs[i] = Integer.parseInt(split[i]);
         }
         return freqs;
     }

@@ -76,7 +76,7 @@ public class SnowfallView extends View {
 
     /** Used to determine if we let it snow */
     @Nullable
-    private FirebaseRemoteConfig remoteConfig = null;
+    private FirebaseRemoteConfig remoteConfig;
 
     public SnowfallView(Context context, @Nullable AttributeSet attrs) {
         super(context, attrs);
