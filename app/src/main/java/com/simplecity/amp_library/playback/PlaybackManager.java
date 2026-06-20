@@ -317,7 +317,7 @@ public class PlaybackManager implements Playback.Callbacks {
         Uri uri = Uri.parse(path);
         long id = -1;
         try {
-            id = Long.valueOf(uri.getLastPathSegment());
+            id = Long.parseLong(uri.getLastPathSegment());
         } catch (NumberFormatException ignored) {
         }
 

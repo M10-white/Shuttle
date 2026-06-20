@@ -112,7 +112,7 @@ class UpNextView constructor(context: Context, attrs: AttributeSet? = null, defS
             override fun queueChanged(queuePosition: Int, queueLength: Int) {
                 super.queueChanged(queuePosition, queueLength)
 
-                queuePositionTextView.text = String.format("%d / %d", queuePosition, queueLength)
+                queuePositionTextView.text = "$queuePosition / $queueLength"
             }
 
             override fun playbackChanged(isPlaying: Boolean) {

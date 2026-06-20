@@ -1,14 +1,7 @@
 body {
 	font-family: 'Helvetica', sans-serif;
 	color: #ffffff;
-}
-
-body
-{
- 	padding-top: 0px;
-    padding-right: 16px;
-    padding-bottom: 0px;
-    padding-left: 16px;
+	padding: 0 16px;
     margin: 0;
 	background-color: transparent;
 	line-height: 1.6em;

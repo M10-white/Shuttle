@@ -36,7 +36,7 @@ public final class SqlBriteUtils {
         return wrapContentProvider(context)
                 .createQuery(query.uri, query.projection, query.selection, query.args, query.sort, false)
                 .subscribeOn(Schedulers.io())
-                .doOnError(error -> Log.e(TAG, "Query failed.\nError:" + error.toString() + "\nQuery: " + query.toString()));
+                .doOnError(error -> Log.e(TAG, "Query failed.\nError:" + error + "\nQuery: " + query));
     }
 
     /**

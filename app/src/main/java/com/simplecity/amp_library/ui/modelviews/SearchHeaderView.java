@@ -33,7 +33,7 @@ public class SearchHeaderView extends BaseViewModel<SearchHeaderView.ViewHolder>
     public void bindView(ViewHolder holder) {
         super.bindView(holder);
 
-        holder.lineOne.setText(header.title);
+        holder.lineOne.setText(header.getTitle());
     }
 
     @Override

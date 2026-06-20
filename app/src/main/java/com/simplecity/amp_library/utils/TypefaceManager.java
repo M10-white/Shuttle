@@ -14,7 +14,7 @@ public class TypefaceManager {
     public static final String SANS_SERIF_LIGHT = "sans-serif-light";
 
     private final Map<String, Typeface> mCache = new ArrayMap<>();
-    private static TypefaceManager sInstance = null;
+    private static TypefaceManager sInstance;
 
     /**
      * Only initialize through {@link #getInstance()}

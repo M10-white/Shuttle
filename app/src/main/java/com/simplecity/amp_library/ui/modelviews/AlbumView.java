@@ -13,6 +13,7 @@ import com.simplecity.amp_library.model.Album;
 import com.simplecity.amp_library.ui.adapters.ViewType;
 import com.simplecity.amp_library.utils.PlaceholderProvider;
 import com.simplecity.amp_library.utils.SettingsManager;
+import java.util.Locale;
 import com.simplecity.amp_library.utils.StringUtils;
 import com.simplecity.amp_library.utils.sorting.SortManager;
 import java.util.Arrays;
@@ -197,7 +198,7 @@ public class AlbumView extends MultiItemView<AlbumView.ViewHolder, Album> implem
 
         if (requiresSubstring) {
             if (!TextUtils.isEmpty(string)) {
-                string = string.substring(0, 1).toUpperCase();
+                string = string.substring(0, 1).toUpperCase(Locale.getDefault());
             } else {
                 string = " ";
             }

@@ -546,7 +546,9 @@ public class ColorHelper {
 
             final int hueSegment = (int) h / 60;
 
-            int r = 0, g = 0, b = 0;
+            int r = 0;
+            int g = 0;
+            int b = 0;
 
             switch (hueSegment) {
                 case 0:

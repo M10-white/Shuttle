@@ -189,7 +189,7 @@ public class StringUtils {
             name = pattern.matcher(name)
                     .replaceAll("")
                     .trim()
-                    .toLowerCase();
+                    .toLowerCase(Locale.ROOT);
         } else {
             name = "";
         }
@@ -201,7 +201,7 @@ public class StringUtils {
      * @return true if String s1 contains String s2, ignoring case.
      */
     public static boolean containsIgnoreCase(String s1, String s2) {
-        return s1.toLowerCase().contains(s2.toLowerCase());
+        return s1.toLowerCase(Locale.ROOT).contains(s2.toLowerCase(Locale.ROOT));
     }
 
     /**

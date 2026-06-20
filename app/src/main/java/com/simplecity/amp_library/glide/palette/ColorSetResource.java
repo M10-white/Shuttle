@@ -22,6 +22,6 @@ public class ColorSetResource implements Resource<ColorSet> {
 
     @Override
     public void recycle() {
-
+        // ColorSet is a plain data class with no resources to release
     }
 }

@@ -144,7 +144,7 @@ class SuggestedFragment :
             }
         }
 
-        view.addItemDecoration(SuggestedDividerDecoration(resources))
+        view.addItemDecoration(SuggestedDividerDecoration())
         view.setRecyclerListener(RecyclerListener())
         view.layoutManager = gridLayoutManager
         view.adapter = adapter

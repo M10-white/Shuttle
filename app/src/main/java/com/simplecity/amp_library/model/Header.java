@@ -4,10 +4,14 @@ import java.io.Serializable;
 
 public class Header implements Serializable {
 
-    public String title;
+    private String title;
 
     public Header(String title) {
         this.title = title;
+    }
+
+    public String getTitle() {
+        return title;
     }
 
     @Override
