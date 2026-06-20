@@ -173,7 +173,7 @@ public class AlbumView extends MultiItemView<AlbumView.ViewHolder, Album> implem
     public String getSectionName() {
 
         int sortOrder = sortManager.getAlbumsSortOrder();
-        String string = null;
+        String string = "";
         boolean requiresSubstring = true;
         switch (sortOrder) {
             case SortManager.AlbumSort.DEFAULT:
